@@ -10,9 +10,10 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.example.starwars.data.repository.PlanetsRepository
 import com.example.starwars.data.response.SinglePlanetResponse
+import com.example.starwars.utils.NetworkResult
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -27,6 +28,14 @@ class MainViewModel @Inject constructor
 
     fun getPlanets() : Flow<PagingData<SinglePlanetResponse>> {
         return repository.getPlanetList().cachedIn(viewModelScope)
+    }
+
+    fun getPlanet(id : Int)  : Flow<NetworkResult<SinglePlanetResponse>>{
+        return repository.getSinglePlanet(id).onEach {
+            if (it is  NetworkResult.Success) {
+                it.data?.name = "Ishara edit this"
+            }
+        }
     }
 
     fun setSinglePlanetData(singlePlanetResponse: SinglePlanetResponse) {

@@ -1,11 +1,13 @@
 package com.example.starwars.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.example.starwars.BuildConfig
 import com.example.starwars.R
@@ -13,6 +15,9 @@ import com.example.starwars.data.response.SinglePlanetResponse
 import com.example.starwars.databinding.FragmentDetailBinding
 import com.example.starwars.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
@@ -33,6 +38,14 @@ class DetailFragment : Fragment() {
     }
 
     private fun onBind() {
+        lifecycleScope.launch {
+            mainViewModel.getPlanet(1).collectLatest {
+                it.data?.name?.let { it1 -> Log.d("*** Planet ***", it1) }
+                it.data?.climate?.let { it1 -> Log.d("*** Planet ***", it1) }
+            }
+        }
+
+
         singlePlanetResponse.let {
             binding.planetName.text = singlePlanetResponse?.name
             binding.rotationPeriodVal.text = singlePlanetResponse?.rotation_period

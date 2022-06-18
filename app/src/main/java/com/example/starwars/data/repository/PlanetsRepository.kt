@@ -26,7 +26,7 @@ class PlanetsRepository@Inject constructor(
        ).flow
     }
 
-    suspend fun getSinglePlanet(id : Int) : Flow<NetworkResult<SinglePlanetResponse>> {
+    fun getSinglePlanet(id : Int) : Flow<NetworkResult<SinglePlanetResponse>> {
         return flow {
             emit(safeApiCall { starWarsService.getPlanetAsync(id) })
         }.flowOn(Dispatchers.IO)

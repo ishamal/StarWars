@@ -26,15 +26,18 @@ class MainViewModel @Inject constructor
     private var singlePlanetData  = MutableLiveData<SinglePlanetResponse>()
     val singlePlanetResponseLiveData : LiveData<SinglePlanetResponse> get() = singlePlanetData
 
+    private var isLoading = MutableLiveData<Boolean>()
+    val isLoadingLiveData : LiveData<Boolean> get() = isLoading
+
     fun getPlanets() : Flow<PagingData<SinglePlanetResponse>> {
         return repository.getPlanetList().cachedIn(viewModelScope)
     }
 
     fun getPlanet(id : Int)  : Flow<NetworkResult<SinglePlanetResponse>>{
-        return repository.getSinglePlanet(id).onEach {
-            if (it is  NetworkResult.Success) {
-                it.data?.name = "Ishara edit this"
-            }
+        return repository.getSinglePlanet(id).onStart {
+            isLoading.postValue(true)
+        }.onEach {
+            isLoading.postValue(false)
         }
     }
 

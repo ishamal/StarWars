@@ -30,7 +30,7 @@ class PlanetAdapter(var listener : PlanetItemClickListener) :
 
     override fun onBindViewHolder(holder: PlanetViewHolder, position: Int) {
         val data = getItem(position)
-        data?.let { holder.bind(it,listener) }
+        data?.let { holder.bind(it,listener, position) }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanetViewHolder {

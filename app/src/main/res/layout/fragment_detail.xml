@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_image" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:elevation="100dp"
+        android:layout_height="0dp"
+        app:cardCornerRadius="30dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/ui_top_round_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0">
+
+<!--        <ScrollView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            -->
+<!--            -->
+<!--        </ScrollView>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <TextView
+                android:id="@+id/planetName"
+                style="@style/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rotationPeriodTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/rotation_period"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/planetName" />
+
+            <TextView
+                android:id="@+id/rotationPeriodVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/rotationPeriodTitle"
+                app:layout_constraintStart_toEndOf="@+id/rotationPeriodTitle"
+                app:layout_constraintTop_toTopOf="@+id/rotationPeriodTitle" />
+
+            <TextView
+                android:id="@+id/orbitalPeriodTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/orbital_period"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rotationPeriodTitle" />
+
+            <TextView
+                android:id="@+id/orbitalPerioddVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/orbitalPeriodTitle"
+                app:layout_constraintStart_toEndOf="@+id/orbitalPeriodTitle"
+                app:layout_constraintTop_toTopOf="@+id/orbitalPeriodTitle" />
+
+            <TextView
+                android:id="@+id/diameterTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/diameter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/orbitalPeriodTitle" />
+
+            <TextView
+                android:id="@+id/diameterVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/diameterTitle"
+                app:layout_constraintStart_toEndOf="@+id/diameterTitle"
+                app:layout_constraintTop_toTopOf="@+id/diameterTitle" />
+
+            <TextView
+                android:id="@+id/climateTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/climate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/diameterTitle" />
+
+            <TextView
+                android:id="@+id/climateVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/climateTitle"
+                app:layout_constraintStart_toEndOf="@+id/climateTitle"
+                app:layout_constraintTop_toTopOf="@+id/climateTitle" />
+
+            <TextView
+                android:id="@+id/gravityTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/gravity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/climateTitle" />
+
+            <TextView
+                android:id="@+id/gravityVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/gravityTitle"
+                app:layout_constraintStart_toEndOf="@+id/gravityTitle"
+                app:layout_constraintTop_toTopOf="@+id/gravityTitle" />
+
+            <TextView
+                android:id="@+id/terrainTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/terrain"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gravityTitle" />
+
+            <TextView
+                android:id="@+id/terrainVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/terrainTitle"
+                app:layout_constraintStart_toEndOf="@+id/terrainTitle"
+                app:layout_constraintTop_toTopOf="@+id/terrainTitle" />
+
+            <TextView
+                android:id="@+id/surfaceWaterTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/surface_water"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/terrainTitle" />
+
+            <TextView
+                android:id="@+id/surfaceWaterVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/surfaceWaterTitle"
+                app:layout_constraintStart_toEndOf="@+id/surfaceWaterTitle"
+                app:layout_constraintTop_toTopOf="@+id/surfaceWaterTitle" />
+
+            <TextView
+                android:id="@+id/populationTitle"
+                android:layout_width="wrap_content"
+                style="@style/normalText"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/population"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/surfaceWaterTitle" />
+
+            <TextView
+                android:id="@+id/populationVal"
+                style="@style/normalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text=""
+                app:layout_constraintBottom_toBottomOf="@+id/populationTitle"
+                app:layout_constraintStart_toEndOf="@+id/populationTitle"
+                app:layout_constraintTop_toTopOf="@+id/populationTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,10 @@ class PlanetViewHolder(private val _binding : ItemPlanetCardBinding) : RecyclerV
         _binding.populationText.text = "Population : ${singlePlanet.population}"
         _binding.climateText.text = "Climate : ${singlePlanet.climate}"
 
+        _binding.root.setOnClickListener {
+            listener.onItemClicked(singlePlanet)
+        }
+
     }
 
 }

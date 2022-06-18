@@ -4,14 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.GridLayout
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.starwars.R
 import com.example.starwars.data.response.SinglePlanetResponse
 import com.example.starwars.databinding.FragmentMainBinding
 import com.example.starwars.ui.adapter.PlanetAdapter
@@ -25,7 +24,7 @@ import kotlinx.coroutines.launch
 class MainFragment : Fragment(), PlanetItemClickListener {
 
     private lateinit var binding: FragmentMainBinding
-    private val mainViewModel by viewModels<MainViewModel>()
+    private val mainViewModel  : MainViewModel by activityViewModels()
     private var planetAdapter : PlanetAdapter? = null
 
     override fun onCreateView(
@@ -47,13 +46,16 @@ class MainFragment : Fragment(), PlanetItemClickListener {
         }
     }
 
-    fun getData() = lifecycleScope.launch {
+    private fun getData() = lifecycleScope.launch {
         mainViewModel.plantList.collectLatest {
             planetAdapter?.submitData(it)
         }
     }
 
     override fun onItemClicked(data: SinglePlanetResponse) {
-
+        mainViewModel.setSinglePlanetData(data)
+        try {
+            findNavController().navigate(R.id.action_mainFragment_to_detailFragment)
+        } catch (e : Exception) {}
     }
 }

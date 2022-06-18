@@ -2,6 +2,8 @@ package com.example.starwars.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
@@ -23,8 +25,14 @@ class MainViewModel @Inject constructor
 
     val plantList : Flow<PagingData<SinglePlanetResponse>> = repository.getPlanetList().cachedIn(viewModelScope)
 
+    private var singlePlanetData  = MutableLiveData<SinglePlanetResponse>()
+    val singlePlanetResponseLiveData : LiveData<SinglePlanetResponse> get() = singlePlanetData
+
     fun getPlanets() : Flow<PagingData<SinglePlanetResponse>> {
         return repository.getPlanetList().cachedIn(viewModelScope)
     }
 
+    fun setSinglePlanetData(singlePlanetResponse: SinglePlanetResponse) {
+        singlePlanetData.postValue(singlePlanetResponse)
+    }
 }

@@ -9,7 +9,6 @@ data class PlanetResponse(
     var results : List<SinglePlanetResponse>?
 )
 
-
 data class SinglePlanetResponse(
     var name : String?,
     var rotation_period : String?,

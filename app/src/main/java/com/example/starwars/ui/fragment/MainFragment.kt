@@ -35,6 +35,11 @@ class MainFragment : Fragment(), PlanetItemClickListener {
         binding = FragmentMainBinding.inflate(inflater)
         initGridView()
         getData()
+        planetAdapter?.addLoadStateListener {
+            if(planetAdapter?.itemCount!! > 0) {
+                binding.loadingIndicator.visibility = View.GONE
+            }
+        }
         return binding.root
     }
 

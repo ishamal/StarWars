@@ -60,7 +60,7 @@ dependencies {
     def activity_version = "1.4.0"
     def paging_version = "3.1.1"
     def nav_version = "2.4.2"
-    def glide_version = "4.13.1"
+    def glide_version = "4.13.2"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
@@ -83,16 +83,13 @@ dependencies {
     //Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.2"
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6"
     implementation "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
-
-    //material design
-    implementation 'com.google.android.material:material:1.6.1'
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:$lifeCycleVersionExtensions"

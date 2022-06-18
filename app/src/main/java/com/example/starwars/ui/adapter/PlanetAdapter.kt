@@ -10,7 +10,6 @@ import com.example.starwars.ui.viewholder.PlanetViewHolder
 class PlanetAdapter(var listener : PlanetItemClickListener) :
     PagingDataAdapter<SinglePlanetResponse, PlanetViewHolder>(COMPARATOR) {
 
-
     companion object {
         private val COMPARATOR = object : DiffUtil.ItemCallback<SinglePlanetResponse>() {
             override fun areItemsTheSame(
@@ -26,7 +25,6 @@ class PlanetAdapter(var listener : PlanetItemClickListener) :
             ): Boolean {
                 return oldItem.name.equals(newItem.name,true)
             }
-
         }
     }
 

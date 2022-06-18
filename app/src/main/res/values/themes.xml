@@ -24,6 +24,10 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
+    <style name="TopPageTitleText" parent="titleText">
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="normalText" parent="simpleText">
         <item name="android:textSize">14sp</item>
     </style>

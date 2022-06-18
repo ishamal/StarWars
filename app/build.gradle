@@ -43,6 +43,7 @@ android {
     productFlavors {
         dev {
             buildConfigField "String", "LINK_BASE_URL", "\"https://swapi.dev/api/\""
+            buildConfigField "String", "IMAGE_BASE_URL", "\"https://picsum.photos/200/300?random=\""
         }
     }
 
@@ -59,6 +60,7 @@ dependencies {
     def activity_version = "1.4.0"
     def paging_version = "3.1.1"
     def nav_version = "2.4.2"
+    def glide_version = "4.13.1"
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
@@ -105,4 +107,7 @@ dependencies {
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 }

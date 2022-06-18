@@ -2,7 +2,7 @@
     <string name="app_name">StarWars</string>
     <string name="population">population :</string>
     <string name="climate">climate :</string>
-    <string name="name">Name</string>
+    <string name="name">Name :</string>
     <string name="rotation_period">Rotation Period :</string>
     <string name="orbital_period">Orbital Period :</string>
     <string name="diameter">Diameter :</string>

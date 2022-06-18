@@ -22,9 +22,6 @@ class MainViewModel @Inject constructor
     application: Application
 ) : AndroidViewModel(application) {
 
-
-    val plantList : Flow<PagingData<SinglePlanetResponse>> = repository.getPlanetList().cachedIn(viewModelScope)
-
     private var singlePlanetData  = MutableLiveData<SinglePlanetResponse>()
     val singlePlanetResponseLiveData : LiveData<SinglePlanetResponse> get() = singlePlanetData
 

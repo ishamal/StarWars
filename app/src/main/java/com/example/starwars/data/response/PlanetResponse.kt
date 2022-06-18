@@ -1,5 +1,7 @@
 package com.example.starwars.data.response
 
+import kotlin.random.Random
+
 data class PlanetResponse(
     var count : Int?,
     var next : String?,
@@ -21,5 +23,6 @@ data class SinglePlanetResponse(
     var created : String?,
     var edited : String?,
     var residents : List<String>?,
-    var films : List<String>?
+    var films : List<String>?,
+    var urlImage : Int? = Random.nextInt(1, 10000)
 )

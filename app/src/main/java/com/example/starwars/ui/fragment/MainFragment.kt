@@ -47,7 +47,7 @@ class MainFragment : Fragment(), PlanetItemClickListener {
     }
 
     private fun getData() = lifecycleScope.launch {
-        mainViewModel.plantList.collectLatest {
+        mainViewModel.getPlanets().collectLatest {
             planetAdapter?.submitData(it)
         }
     }

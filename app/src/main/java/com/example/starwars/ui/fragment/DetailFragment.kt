@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
+import com.example.starwars.BuildConfig
+import com.example.starwars.R
 import com.example.starwars.data.response.SinglePlanetResponse
 import com.example.starwars.databinding.FragmentDetailBinding
 import com.example.starwars.viewmodel.MainViewModel
@@ -41,6 +43,13 @@ class DetailFragment : Fragment() {
             binding.terrainVal.text = singlePlanetResponse?.terrain
             binding.surfaceWaterVal.text = singlePlanetResponse?.surface_water
             binding.populationVal.text = singlePlanetResponse?.population
+
+            Glide
+                .with(this)
+                .load("${BuildConfig.IMAGE_BASE_URL}${singlePlanetResponse?.name}")
+                .placeholder(R.drawable.background_image)
+                .into(binding.imageView)
+
         }
     }
 

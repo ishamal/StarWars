@@ -28,8 +28,9 @@
         <TextView
             android:id="@+id/nameText"
             style="@style/titleText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="24dp"
             android:text="@string/name"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,28 +41,30 @@
         <TextView
             android:id="@+id/populationText"
             style="@style/normalText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:text="@string/population"
-            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toEndOf="@+id/planetImage"
             app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
         <TextView
             android:id="@+id/climateText"
             style="@style/normalText"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
-            app:layout_constraintHorizontal_bias="0.1"
             android:layout_marginBottom="8dp"
             android:text="@string/climate"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toEndOf="@+id/planetImage"
             app:layout_constraintTop_toBottomOf="@+id/populationText" />
 

@@ -1,5 +1,6 @@
 package com.example.starwars.data.response
 
+import java.net.IDN
 import kotlin.random.Random
 
 data class PlanetResponse(
@@ -10,6 +11,7 @@ data class PlanetResponse(
 )
 
 data class SinglePlanetResponse(
+    var id : Int?,
     var name : String?,
     var rotation_period : String?,
     var orbital_period : String?,

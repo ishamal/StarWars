@@ -10,6 +10,7 @@ import com.example.starwars.R
 import com.example.starwars.data.response.SinglePlanetResponse
 import com.example.starwars.databinding.ItemPlanetCardBinding
 import com.example.starwars.ui.events.PlanetItemClickListener
+import java.text.FieldPosition
 
 class PlanetViewHolder(private val _binding : ItemPlanetCardBinding) : RecyclerView.ViewHolder(_binding.root) {
 
@@ -21,13 +22,14 @@ class PlanetViewHolder(private val _binding : ItemPlanetCardBinding) : RecyclerV
     }
 
     @SuppressLint("SetTextI18n")
-    fun bind(singlePlanet : SinglePlanetResponse, listener : PlanetItemClickListener) {
+    fun bind(singlePlanet : SinglePlanetResponse, listener : PlanetItemClickListener, position: Int) {
 
         _binding.nameText.text = "${_binding.root.context.getString(R.string.name)} ${singlePlanet.name}"
         _binding.populationText.text = "${_binding.root.context.getString(R.string.population)} ${singlePlanet.population}"
         _binding.climateText.text = "${_binding.root.context.getString(R.string.climate)} ${singlePlanet.climate}"
 
         _binding.root.setOnClickListener {
+            singlePlanet.id = position + 1 // because position start is 0
             listener.onItemClicked(singlePlanet)
         }
 

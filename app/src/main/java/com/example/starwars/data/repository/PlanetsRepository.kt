@@ -28,7 +28,11 @@ class PlanetsRepository@Inject constructor(
 
     fun getSinglePlanet(id : Int) : Flow<NetworkResult<SinglePlanetResponse>> {
         return flow {
-            emit(safeApiCall { starWarsService.getPlanetAsync(id) })
+            val response = safeApiCall { starWarsService.getPlanetAsync(id) }
+            if (response is NetworkResult.Success) {
+                response.data?.id = id
+            }
+            emit(response)
         }.flowOn(Dispatchers.IO)
     }
 }

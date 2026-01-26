@@ -8,6 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.starwars.R
 import com.example.starwars.data.response.SinglePlanetResponse
@@ -34,10 +38,8 @@ class MainFragment : Fragment(), PlanetItemClickListener {
         binding = FragmentMainBinding.inflate(inflater)
         initGridView()
         getData()
-        planetAdapter?.addLoadStateListener {
-            if(planetAdapter?.itemCount!! > 0) {
-                binding.loadingIndicator.visibility = View.GONE
-            }
+        planetAdapter?.addLoadStateListener { loadState ->
+            binding.loadingIndicator.isVisible = loadState.refresh is LoadState.Loading
         }
         return binding.root
     }

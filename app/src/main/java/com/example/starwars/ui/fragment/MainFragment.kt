@@ -34,8 +34,10 @@ class MainFragment : Fragment(), PlanetItemClickListener {
         binding = FragmentMainBinding.inflate(inflater)
         initGridView()
         getData()
-        planetAdapter?.addLoadStateListener {
-            if(planetAdapter?.itemCount!! > 0) {
+        planetAdapter?.addLoadStateListener { loadState ->
+            if (loadState.refresh is androidx.paging.LoadState.Loading) {
+                binding.loadingIndicator.visibility = View.VISIBLE
+            } else {
                 binding.loadingIndicator.visibility = View.GONE
             }
         }

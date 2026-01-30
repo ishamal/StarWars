@@ -27,6 +27,7 @@ class PlanetViewHolder(private val _binding : ItemPlanetCardBinding) : RecyclerV
         _binding.nameText.text = "${_binding.root.context.getString(R.string.name)} ${singlePlanet.name}"
         _binding.populationText.text = "${_binding.root.context.getString(R.string.population)} ${singlePlanet.population}"
         _binding.climateText.text = "${_binding.root.context.getString(R.string.climate)} ${singlePlanet.climate}"
+        _binding.planetImage.contentDescription = singlePlanet.name
 
         _binding.root.setOnClickListener {
             singlePlanet.id = position + 1 // because position start is 0

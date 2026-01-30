@@ -64,6 +64,7 @@ class DetailFragment : Fragment() {
                             binding.terrainVal.text = singlePlanetResponse?.terrain
                             binding.surfaceWaterVal.text = singlePlanetResponse?.surface_water
                             binding.populationVal.text = singlePlanetResponse?.population
+                            binding.imageView.contentDescription = singlePlanetResponse?.name
 
                             Glide
                                 .with(binding.root.context)

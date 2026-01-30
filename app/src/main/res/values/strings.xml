@@ -10,4 +10,5 @@
     <string name="terrain">Terrain :</string>
     <string name="surface_water">Surface Water :</string>
     <string name="planet_list">Planet List</string>
+    <string name="planet_image">Planet image</string>
 </resources>

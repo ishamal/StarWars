@@ -23,6 +23,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2"
+            android:contentDescription="@string/planet_image"
             app:srcCompat="@drawable/background_image" />
 
         <TextView

@@ -33,6 +33,8 @@ class PlanetViewHolder(private val _binding : ItemPlanetCardBinding) : RecyclerV
             listener.onItemClicked(singlePlanet)
         }
 
+        _binding.planetImage.contentDescription = _binding.root.context.getString(R.string.planet_image_content_description, singlePlanet.name)
+
         Glide
             .with(_binding.root.context)
             .load("${BuildConfig.IMAGE_BASE_URL}${singlePlanet.name}")

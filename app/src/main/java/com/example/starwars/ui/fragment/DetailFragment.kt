@@ -57,13 +57,15 @@ class DetailFragment : Fragment() {
                         singlePlanetResponse.let {
                             binding.planetName.text = singlePlanetResponse?.name
                             binding.rotationPeriodVal.text = singlePlanetResponse?.rotation_period
-                            binding.orbitalPerioddVal.text = singlePlanetResponse?.orbital_period
+                            binding.orbitalPeriodVal.text = singlePlanetResponse?.orbital_period
                             binding.diameterVal.text = singlePlanetResponse?.diameter
                             binding.climateVal.text = singlePlanetResponse?.climate
                             binding.gravityVal.text = singlePlanetResponse?.gravity
                             binding.terrainVal.text = singlePlanetResponse?.terrain
                             binding.surfaceWaterVal.text = singlePlanetResponse?.surface_water
                             binding.populationVal.text = singlePlanetResponse?.population
+
+                            binding.imageView.contentDescription = getString(R.string.planet_image_content_description, singlePlanetResponse?.name)
 
                             Glide
                                 .with(binding.root.context)

@@ -65,6 +65,8 @@ class DetailFragment : Fragment() {
                             binding.surfaceWaterVal.text = singlePlanetResponse?.surface_water
                             binding.populationVal.text = singlePlanetResponse?.population
 
+                            binding.imageView.contentDescription = getString(R.string.planet_image_content_description, singlePlanetResponse?.name)
+
                             Glide
                                 .with(binding.root.context)
                                 .load("${BuildConfig.IMAGE_BASE_URL}${singlePlanetResponse?.name}")

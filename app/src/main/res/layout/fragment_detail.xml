@@ -30,32 +30,29 @@
         app:layout_constraintTop_toTopOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0">
 
-<!--        <ScrollView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent">-->
-<!--            -->
-<!--            -->
-<!--        </ScrollView>-->
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/planetName"
-                style="@style/titleText"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
 
-            <TextView
-                android:id="@+id/rotationPeriodTitle"
+                <TextView
+                    android:id="@+id/planetName"
+                    style="@style/titleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/rotationPeriodTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -65,8 +62,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planetName" />
 
-            <TextView
-                android:id="@+id/rotationPeriodVal"
+                <TextView
+                    android:id="@+id/rotationPeriodVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -76,8 +73,8 @@
                 app:layout_constraintStart_toEndOf="@+id/rotationPeriodTitle"
                 app:layout_constraintTop_toTopOf="@+id/rotationPeriodTitle" />
 
-            <TextView
-                android:id="@+id/orbitalPeriodTitle"
+                <TextView
+                    android:id="@+id/orbitalPeriodTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -87,8 +84,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rotationPeriodTitle" />
 
-            <TextView
-                android:id="@+id/orbitalPerioddVal"
+                <TextView
+                    android:id="@+id/orbitalPerioddVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,8 +95,8 @@
                 app:layout_constraintStart_toEndOf="@+id/orbitalPeriodTitle"
                 app:layout_constraintTop_toTopOf="@+id/orbitalPeriodTitle" />
 
-            <TextView
-                android:id="@+id/diameterTitle"
+                <TextView
+                    android:id="@+id/diameterTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -109,8 +106,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/orbitalPeriodTitle" />
 
-            <TextView
-                android:id="@+id/diameterVal"
+                <TextView
+                    android:id="@+id/diameterVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -120,8 +117,8 @@
                 app:layout_constraintStart_toEndOf="@+id/diameterTitle"
                 app:layout_constraintTop_toTopOf="@+id/diameterTitle" />
 
-            <TextView
-                android:id="@+id/climateTitle"
+                <TextView
+                    android:id="@+id/climateTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -131,8 +128,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/diameterTitle" />
 
-            <TextView
-                android:id="@+id/climateVal"
+                <TextView
+                    android:id="@+id/climateVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,8 +139,8 @@
                 app:layout_constraintStart_toEndOf="@+id/climateTitle"
                 app:layout_constraintTop_toTopOf="@+id/climateTitle" />
 
-            <TextView
-                android:id="@+id/gravityTitle"
+                <TextView
+                    android:id="@+id/gravityTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -153,8 +150,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/climateTitle" />
 
-            <TextView
-                android:id="@+id/gravityVal"
+                <TextView
+                    android:id="@+id/gravityVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -164,8 +161,8 @@
                 app:layout_constraintStart_toEndOf="@+id/gravityTitle"
                 app:layout_constraintTop_toTopOf="@+id/gravityTitle" />
 
-            <TextView
-                android:id="@+id/terrainTitle"
+                <TextView
+                    android:id="@+id/terrainTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -175,8 +172,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/gravityTitle" />
 
-            <TextView
-                android:id="@+id/terrainVal"
+                <TextView
+                    android:id="@+id/terrainVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -186,8 +183,8 @@
                 app:layout_constraintStart_toEndOf="@+id/terrainTitle"
                 app:layout_constraintTop_toTopOf="@+id/terrainTitle" />
 
-            <TextView
-                android:id="@+id/surfaceWaterTitle"
+                <TextView
+                    android:id="@+id/surfaceWaterTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -197,8 +194,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/terrainTitle" />
 
-            <TextView
-                android:id="@+id/surfaceWaterVal"
+                <TextView
+                    android:id="@+id/surfaceWaterVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -208,8 +205,8 @@
                 app:layout_constraintStart_toEndOf="@+id/surfaceWaterTitle"
                 app:layout_constraintTop_toTopOf="@+id/surfaceWaterTitle" />
 
-            <TextView
-                android:id="@+id/populationTitle"
+                <TextView
+                    android:id="@+id/populationTitle"
                 android:layout_width="wrap_content"
                 style="@style/normalText"
                 android:layout_height="wrap_content"
@@ -219,8 +216,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/surfaceWaterTitle" />
 
-            <TextView
-                android:id="@+id/populationVal"
+                <TextView
+                    android:id="@+id/populationVal"
                 style="@style/normalText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -230,7 +227,9 @@
                 app:layout_constraintStart_toEndOf="@+id/populationTitle"
                 app:layout_constraintTop_toTopOf="@+id/populationTitle" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
 
     </androidx.cardview.widget.CardView>
 

@@ -39,6 +39,8 @@ class PlanetViewHolder(private val _binding : ItemPlanetCardBinding) : RecyclerV
             .placeholder(R.drawable.background_image)
             .into(_binding.planetImage)
 
+        _binding.planetImage.contentDescription = _binding.root.context.getString(R.string.planet_image_content_description, singlePlanet.name)
+
     }
 
 }

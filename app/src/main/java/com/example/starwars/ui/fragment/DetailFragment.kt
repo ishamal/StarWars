@@ -71,6 +71,8 @@ class DetailFragment : Fragment() {
                                 .placeholder(R.drawable.background_image)
                                 .into(binding.imageView)
 
+                            binding.imageView.contentDescription = getString(R.string.planet_image_content_description, singlePlanetResponse?.name)
+
                         }
                     }
                 }
